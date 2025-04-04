@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { formatDistanceToNow } from "date-fns"
-import { updateReportStatus } from "@/app/actions/reviews"
+// import { updateReportStatus } from "@/app/actions/reviews"
 import { Button } from "@/components/ui/button"
-import { toast } from "@/components/ui/use-toast"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { StarRating } from "@/components/reviews/star-rating"
 import {
@@ -31,33 +31,33 @@ export function ReviewReportList({ reports, status }: ReviewReportListProps) {
   const handleUpdateStatus = async (reportId: string, newStatus: "resolved" | "rejected") => {
     setProcessingId(reportId)
 
-    try {
-      const result = await updateReportStatus(reportId, newStatus)
+    // try {
+    //   const result = await updateReportStatus(reportId, newStatus)
 
-      if (result.error) {
-        toast({
-          title: "Error",
-          description: result.error,
-          variant: "destructive",
-        })
-      } else {
-        toast({
-          title: "Report updated",
-          description: `Report has been marked as ${newStatus}`,
-        })
+    //   if (result.error) {
+    //     toast({
+    //       title: "Error",
+    //       description: result.error,
+    //       variant: "destructive",
+    //     })
+    //   } else {
+    //     toast({
+    //       title: "Report updated",
+    //       description: `Report has been marked as ${newStatus}`,
+    //     })
 
-        // Update local state
-        setLocalReports(localReports.filter((report) => report.id !== reportId))
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
-    } finally {
-      setProcessingId(null)
-    }
+    
+    //     setLocalReports(localReports.filter((report) => report.id !== reportId))
+    //   }
+    // } catch (error) {
+    //   toast({
+    //     title: "Error",
+    //     description: "An unexpected error occurred",
+    //     variant: "destructive",
+    //   })
+    // } finally {
+    //   setProcessingId(null)
+    // }
   }
 
   if (localReports.length === 0) {

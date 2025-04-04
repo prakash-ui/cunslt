@@ -28,18 +28,18 @@ interface VideoRoomProps {
 
 function VideoControls() {
   const daily = useDaily()
-  const { camState, updateCam } = useVideoTrack()
-  const { micState, updateMic } = useAudioTrack()
+  // const { camState, updateCam } = useVideoTrack()
+  // const { micState, updateMic } = useAudioTrack()
   const { startScreenShare, stopScreenShare, isSharingScreen } = useScreenShare()
   const router = useRouter()
 
-  const toggleVideo = () => {
-    updateCam(camState === "on" ? "off" : "on")
-  }
+  // const toggleVideo = () => {
+  //   updateCam(camState === "on" ? "off" : "on")
+  // }
 
-  const toggleAudio = () => {
-    updateMic(micState === "on" ? "off" : "on")
-  }
+  // const toggleAudio = () => {
+  //   updateMic(micState === "on" ? "off" : "on")
+  // }
 
   const toggleScreenShare = () => {
     if (isSharingScreen) {
@@ -58,13 +58,13 @@ function VideoControls() {
 
   return (
     <div className="flex items-center justify-center space-x-4 p-4">
-      <Button variant={camState === "on" ? "default" : "destructive"} size="icon" onClick={toggleVideo}>
+      {/* <Button variant={camState === "on" ? "default" : "destructive"} size="icon" onClick={toggleVideo}>
         {camState === "on" ? <Video className="h-5 w-5" /> : <VideoOff className="h-5 w-5" />}
       </Button>
 
       <Button variant={micState === "on" ? "default" : "destructive"} size="icon" onClick={toggleAudio}>
         {micState === "on" ? <Mic className="h-5 w-5" /> : <MicOff className="h-5 w-5" />}
-      </Button>
+      </Button> */}
 
       <Button variant={isSharingScreen ? "destructive" : "default"} size="icon" onClick={toggleScreenShare}>
         <ScreenShare className="h-5 w-5" />
@@ -84,13 +84,13 @@ function CallComponent({ token, roomUrl, bookingId, onConsultationEnd }: VideoRo
 
   useEffect(() => {
     // Create the Daily call object
-    const daily = DailyCall.createCallObject()
-    setCallObject(daily)
+    // const daily = DailyCall.createCallObject()
+    // setCallObject(daily)
 
     // Clean up on unmount
-    return () => {
-      daily.destroy()
-    }
+    // return () => {
+    //   daily.destroy()
+    // }
   }, [])
 
   useEffect(() => {
@@ -99,8 +99,8 @@ function CallComponent({ token, roomUrl, bookingId, onConsultationEnd }: VideoRo
     async function joinCall() {
       try {
         setIsJoining(true)
-        await callObject.join({ url: roomUrl, token })
-        setIsJoining(false)
+        // await callObject.join({ url: roomUrl, token })
+        // setIsJoining(false)
 
         // Update booking status to in_progress
         const response = await fetch("/api/bookings/start", {
@@ -129,11 +129,11 @@ function CallComponent({ token, roomUrl, bookingId, onConsultationEnd }: VideoRo
   }, [callObject, token, roomUrl, bookingId, toast])
 
   // Handle call ended event
-  useDailyEvent("call-ended", () => {
-    if (onConsultationEnd) {
-      onConsultationEnd()
-    }
-  })
+  // useDailyEvent("call-ended", () => {
+  //   if (onConsultationEnd) {
+  //     onConsultationEnd()
+  //   }
+  // })
 
   if (isJoining) {
     return (
