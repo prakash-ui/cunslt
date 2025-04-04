@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { getReviewReports } from "@/app/actions/reviews"
+// import { getReviewReports } from "@/app/actions/reviews"
 import { getCurrentUser } from "@/app/actions/auth"
 import { redirect } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -18,15 +18,15 @@ async function fetchReviewReports() {
     redirect("/login");
   }
 
-  const pendingResult = await getReviewReports(1, 10, "pending");
-  const resolvedResult = await getReviewReports(1, 10, "resolved");
-  const rejectedResult = await getReviewReports(1, 10, "rejected");
+  // const pendingResult = await getReviewReports(1, 10, "pending");
+  // const resolvedResult = await getReviewReports(1, 10, "resolved");
+  // const rejectedResult = await getReviewReports(1, 10, "rejected");
 
-  return {
-    pendingReports: "reports" in pendingResult ? pendingResult.reports : [],
-    resolvedReports: "reports" in resolvedResult ? resolvedResult.reports : [],
-    rejectedReports: "reports" in rejectedResult ? rejectedResult.reports : [],
-  };
+  // return {
+  //   pendingReports: "reports" in pendingResult ? pendingResult.reports : [],
+  //   resolvedReports: "reports" in resolvedResult ? resolvedResult.reports : [],
+  //   rejectedReports: "reports" in rejectedResult ? rejectedResult.reports : [],
+  // };
 }
 
 function ReviewReportsContent({ reports }: { reports: any }) {
