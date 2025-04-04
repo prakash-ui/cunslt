@@ -2,14 +2,21 @@
 
 import { useState, useEffect } from "react"
 import { formatDistanceToNow } from "date-fns"
-import { ThumbsUp, ThumbsDown, Flag, MessageSquare, Trash, Edit } from "lucide-react"
+import {
+  ThumbsUp,
+  ThumbsDown,
+  Flag,
+  MessageSquare,
+  Trash,
+  Edit,
+} from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { StarRating } from "./star-rating"
 import { ReviewResponseForm } from "./review-response-form"
 import { ReviewReportDialog } from "./review-report-dialog"
-import { markReviewHelpful, deleteReview, deleteReviewResponse } from "@/app/actions/reviews"
+// import { markReviewHelpful, deleteReview, deleteReviewResponse } from "@/app/actions/reviews"
 import { toast } from "@/components/ui/use-toast"
 import {
   AlertDialog,
@@ -47,7 +54,6 @@ export function ReviewCard({
   const [helpfulState, setHelpfulState] = useState<"helpful" | "unhelpful" | null>(null)
 
   useEffect(() => {
-    // Check if the user has already marked this review
     if (currentUserId && review.review_helpful) {
       const userMark = review.review_helpful.find((mark: any) => mark.user_id === currentUserId)
 
@@ -72,98 +78,61 @@ export function ReviewCard({
       return
     }
 
-    try {
-      const result = await markReviewHelpful(review.id, isHelpful)
-
-      if (result.error) {
-        toast({
-          title: "Error",
-          description: result.error,
-          variant: "destructive",
-        })
-      } else if (result.removed) {
-        setHelpfulState(null)
-      } else {
-        setHelpfulState(isHelpful ? "helpful" : "unhelpful")
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
-    }
+    // try {
+    //   const result = await markReviewHelpful(review.id, isHelpful)
+    //   if (result.error) {
+    //     toast({ title: "Error", description: result.error, variant: "destructive" })
+    //   } else if (result.removed) {
+    //     setHelpfulState(null)
+    //   } else {
+    //     setHelpfulState(isHelpful ? "helpful" : "unhelpful")
+    //   }
+    // } catch (error) {
+    //   toast({
+    //     title: "Error",
+    //     description: "An unexpected error occurred",
+    //     variant: "destructive",
+    //   })
+    // }
   }
 
-  const handleDeleteReview = async () => {
-    if (!currentUserId || (!isReviewOwner && !isAdmin)) return
+  // const handleDeleteReview = async () => {
+  //   if (!currentUserId || (!isReviewOwner && !isAdmin)) return
+  //   setIsDeleting(true)
 
-    setIsDeleting(true)
+  //   try {
+  //     const result = await deleteReview(review.id)
+  //     if (result.error) {
+  //       toast({ title: "Error", description: result.error, variant: "destructive" })
+  //     } else {
+  //       toast({ title: "Review deleted", description: "The review has been deleted successfully" })
+  //       if (onDeleted) onDeleted()
+  //     }
+  //   } catch (error) {
+  //     toast({ title: "Error", description: "An unexpected error occurred", variant: "destructive" })
+  //   } finally {
+  //     setIsDeleting(false)
+  //   }
+  // }
 
-    try {
-      const result = await deleteReview(review.id)
+  // const handleDeleteResponse = async (responseId: string) => {
+  //   if (!currentUserId || !canDeleteResponse) return
+  //   setIsDeletingResponse(true)
 
-      if (result.error) {
-        toast({
-          title: "Error",
-          description: result.error,
-          variant: "destructive",
-        })
-      } else {
-        toast({
-          title: "Review deleted",
-          description: "The review has been deleted successfully",
-        })
-
-        if (onDeleted) {
-          onDeleted()
-        }
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
-    } finally {
-      setIsDeleting(false)
-    }
-  }
-
-  const handleDeleteResponse = async (responseId: string) => {
-    if (!currentUserId || !canDeleteResponse) return
-
-    setIsDeletingResponse(true)
-
-    try {
-      const result = await deleteReviewResponse(responseId)
-
-      if (result.error) {
-        toast({
-          title: "Error",
-          description: result.error,
-          variant: "destructive",
-        })
-      } else {
-        toast({
-          title: "Response deleted",
-          description: "Your response has been deleted successfully",
-        })
-
-        if (onDeleted) {
-          onDeleted()
-        }
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred",
-        variant: "destructive",
-      })
-    } finally {
-      setIsDeletingResponse(false)
-    }
-  }
+  //   try {
+  //     const result = await deleteReviewResponse(responseId)
+  //     if (result.error) {
+  //       toast({ title: "Error", description: result.error, variant: "destructive" })
+  //     } else {
+  //       toast({ title: "Response deleted", description: "Your response has been deleted successfully" })
+  //       if (onDeleted) onDeleted()
+  //     }
+  //   } catch (error) {
+  //     toast({ title: "Error", description: "An unexpected error occurred", variant: "destructive" })
+  //   } finally {
+  //     setIsDeletingResponse(false)
+  //   }
+  // }
 
   return (
     <Card className="mb-4">
@@ -171,15 +140,15 @@ export function ReviewCard({
         <div className="flex items-start justify-between">
           <div className="flex items-start space-x-4">
             <Avatar className="h-10 w-10">
-              <AvatarImage src={review.client?.avatar_url || ""} alt={review.client?.full_name || "User"} />
-              <AvatarFallback>{review.client?.full_name?.charAt(0) || "U"}</AvatarFallback>
+              <AvatarImage src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" />
+              <AvatarFallback> || "U</AvatarFallback>
             </Avatar>
             <div>
-              <div className="font-medium">{review.client?.full_name || "Anonymous User"}</div>
+              <div className="font-medium"> "Anonymous User"</div>
               <div className="flex items-center mt-1">
-                <StarRating rating={review.rating} size="sm" />
+                <StarRating rating={5} size="sm" />
                 <span className="ml-2 text-sm text-gray-500">
-                  {formatDistanceToNow(new Date(review.created_at), { addSuffix: true })}
+                  {formatDistanceToNow(new Date("2023/05/05"), { addSuffix: true })}
                 </span>
               </div>
             </div>
@@ -192,7 +161,6 @@ export function ReviewCard({
                   <Edit className="h-4 w-4" />
                 </Button>
               )}
-
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="ghost" size="icon" title="Delete review">
@@ -209,7 +177,7 @@ export function ReviewCard({
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <AlertDialogAction
-                      onClick={handleDeleteReview}
+                      onClick={() => {}} // replace with handleDeleteReview when uncommented
                       disabled={isDeleting}
                       className="bg-red-500 hover:bg-red-600"
                     >
@@ -227,9 +195,7 @@ export function ReviewCard({
         {review.review_responses?.[0] && (
           <div className="mt-6 bg-gray-50 p-4 rounded-md">
             <div className="flex items-start justify-between">
-              <div className="flex items-start space-x-4">
-                <div className="font-medium">Expert Response</div>
-              </div>
+              <div className="font-medium">Expert Response</div>
 
               {canDeleteResponse && (
                 <AlertDialog>
@@ -248,7 +214,7 @@ export function ReviewCard({
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
                       <AlertDialogAction
-                        onClick={() => handleDeleteResponse(review.review_responses[0].id)}
+                        onClick={() => {}} // replace with handleDeleteResponse(...) when uncommented
                         disabled={isDeletingResponse}
                         className="bg-red-500 hover:bg-red-600"
                       >
@@ -261,7 +227,6 @@ export function ReviewCard({
             </div>
 
             <div className="mt-2 text-sm">{review.review_responses[0].response}</div>
-
             <div className="mt-2 text-xs text-gray-500">
               {formatDistanceToNow(new Date(review.review_responses[0].created_at), { addSuffix: true })}
             </div>
@@ -280,7 +245,6 @@ export function ReviewCard({
             <ThumbsUp className="h-4 w-4 mr-2" />
             Helpful
           </Button>
-
           <Button
             variant="ghost"
             size="sm"
@@ -299,7 +263,6 @@ export function ReviewCard({
               Respond
             </Button>
           )}
-
           {!isReviewOwner && !isAdmin && (
             <Button variant="ghost" size="sm" onClick={() => setShowReportDialog(true)}>
               <Flag className="h-4 w-4 mr-2" />
@@ -326,4 +289,3 @@ export function ReviewCard({
     </Card>
   )
 }
-

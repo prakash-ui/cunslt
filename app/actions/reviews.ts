@@ -69,7 +69,7 @@ export async function createReview({
       },
     })
 
-    const totalRating = expertReviews.reduce((sum, review) => sum + review.rating, 0)
+    const totalRating = expertReviews.reduce((sum:any, review:any) => sum + review.rating, 0)
     const averageRating = totalRating / expertReviews.length
 
     await db.expert.update({
@@ -163,7 +163,7 @@ export async function updateReview({
       },
     })
 
-    const totalRating = expertReviews.reduce((sum, review) => sum + review.rating, 0)
+    const totalRating = expertReviews.reduce((sum:any, review:any) => sum + review.rating, 0)
     const averageRating = totalRating / expertReviews.length
 
     await db.expert.update({
@@ -230,7 +230,7 @@ export async function deleteReview(reviewId: string) {
     })
 
     if (expertReviews.length > 0) {
-      const totalRating = expertReviews.reduce((sum, review) => sum + review.rating, 0)
+      const totalRating = expertReviews.reduce((sum:any, review:any) => sum + review.rating, 0)
       const averageRating = totalRating / expertReviews.length
 
       await db.expert.update({
