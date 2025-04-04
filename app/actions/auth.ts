@@ -6,9 +6,8 @@ import { createAuditLog, AuditLogEventType } from "@/lib/audit-log"
 import { headers } from "next/headers"
 import { auth } from "@/lib/auth"
 import { createClient } from "@/lib/supabase/server"
-import { compare } from "bcrypt"
+
 import type { z } from "zod"
-import { LoginSchema } from "@/lib/validations/auth"
 
 export async function getCurrentUser() {
   const supabase = createClient()
