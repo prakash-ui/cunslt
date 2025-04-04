@@ -1,0 +1,105 @@
+{
+  "common": {
+    "appName": "Cunslt",
+    "tagline": "Consultas con Expertos a Demanda",
+    "findExpert": "Encontrar un Experto",
+    "becomeExpert": "Conviértete en Experto",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar Sesión",
+    "search": "Buscar",
+    "categories": "Categorías",
+    "profile": "Perfil",
+    "dashboard": "Panel",
+    "bookings": "Reservas",
+    "messages": "Mensajes",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "cookies": "Cookies"
+  },
+  "home": {
+    "hero": {
+      "title": "Consultas con Expertos a Demanda",
+      "subtitle": "Reserva consultas por video con expertos verificados en negocios, finanzas y tecnología.",
+      "cta": "Encontrar un Experto"
+    },
+    "categories": {
+      "title": "Explorar por Categoría",
+      "viewAll": "Ver Todas las Categorías"
+    },
+    "experts": {
+      "title": "Expertos Destacados",
+      "viewMore": "Encontrar Más Expertos"
+    },
+    "howItWorks": {
+      "title": "Cómo Funciona",
+      "step1": {
+        "title": "Encuentra un Experto",
+        "description": "Explora nuestro mercado de expertos verificados y encuentra la combinación perfecta para tus necesidades."
+      },
+      "step2": {
+        "title": "Reserva una Consulta",
+        "description": "Selecciona un horario conveniente y reserva tu consulta por video de forma segura."
+      },
+      "step3": {
+        "title": "Obtén Asesoramiento Experto",
+        "description": "Conéctate por video y recibe asesoramiento personalizado para resolver tus desafíos."
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "viewAll": "Ver Todas las Preguntas Frecuentes"
+    }
+  },
+  "search": {
+    "title": "Encontrar un Experto",
+    "placeholder": "Buscar por nombre, título o palabras clave...",
+    "filters": "Filtros",
+    "priceRange": "Rango de Precio",
+    "categories": "Categorías",
+    "skills": "Habilidades",
+    "rating": "Calificación Mínima",
+    "country": "País",
+    "verified": "Expertos Verificados",
+    "availability": "Disponibilidad",
+    "noResults": "No se encontraron expertos",
+    "tryAdjusting": "Intenta ajustar tus filtros de búsqueda para encontrar más resultados",
+    "showing": "Mostrando",
+    "of": "de",
+    "experts": "expertos"
+  },
+  "expert": {
+    "profile": {
+      "about": "Acerca de",
+      "reviews": "Reseñas",
+      "availability": "Disponibilidad",
+      "hourlyRate": "/hora",
+      "verified": "Verificado",
+      "book": "Reservar Consulta",
+      "contact": "Contactar",
+      "aboutMe": "Acerca de Mí",
+      "skills": "Habilidades y Experiencia",
+      "experience": "Experiencia",
+      "education": "Educación",
+      "noReviews": "Aún no hay reseñas.",
+      "noAvailability": "No hay disponibilidad establecida."
+    }
+  },
+  "booking": {
+    "title": "Reservar una Consulta",
+    "date": "Fecha",
+    "time": "Hora",
+    "duration": "Duración",
+    "problem": "Describe Tu Problema",
+    "problemPlaceholder": "Por favor describe lo que te gustaría discutir en la consulta",
+    "total": "Total",
+    "book": "Reservar Consulta",
+    "noAvailableTimes": "No hay horarios disponibles para esta fecha y duración",
+    "loadingTimes": "Cargando horarios disponibles..."
+  }
+}
+

@@ -1,0 +1,220 @@
+{
+  "common": {
+    "home": "Inicio",
+    "findExperts": "Encontrar Expertos",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "login": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "messages": "Mensajes",
+    "dashboard": "Panel",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión"
+  },
+  "home": {
+    "hero": {
+      "badge": "Consultas con Expertos Simplificadas",
+      "title": "Conecta con Expertos de Primer Nivel en Minutos",
+      "description": "Obtén asesoramiento personalizado de profesionales verificados en diversos campos. Reserva sesiones, chatea en tiempo real y resuelve tus desafíos.",
+      "findExpert": "Encontrar un Experto",
+      "becomeExpert": "Convertirse en Experto",
+      "verifiedExperts": "Expertos Verificados",
+      "securePayments": "Pagos Seguros",
+      "moneyBack": "Garantía de Devolución"
+    },
+    "featuredExperts": {
+      "badge": "Expertos Destacados",
+      "title": "Conoce a Nuestros Mejores Consultores",
+      "description": "Descubre expertos altamente calificados listos para ayudarte con tus necesidades específicas",
+      "viewProfile": "Ver Perfil",
+      "viewAll": "Ver Todos los Expertos"
+    },
+    "howItWorks": {
+      "badge": "Proceso Simple",
+      "title": "Cómo Funciona Cunslt",
+      "description": "Obtén asesoramiento experto en tres simples pasos",
+      "step1": {
+        "title": "Encuentra tu Experto",
+        "description": "Navega por perfiles, lee reseñas y encuentra el experto perfecto para tus necesidades."
+      },
+      "step2": {
+        "title": "Reserva una Sesión",
+        "description": "Elige un horario conveniente y reserva tu consulta con pago seguro."
+      },
+      "step3": {
+        "title": "Obtén Asesoramiento Experto",
+        "description": "Conéctate por videollamada o chat y recibe orientación y soluciones personalizadas."
+      }
+    },
+    "features": {
+      "badge": "Características de la Plataforma",
+      "title": "Por Qué Elegir Cunslt",
+      "description": "Nuestra plataforma ofrece todo lo que necesitas para consultas exitosas",
+      "verifiedExperts": {
+        "title": "Expertos Verificados",
+        "description": "Todos los expertos en nuestra plataforma son rigurosamente evaluados y verificados para garantizar asesoramiento de calidad."
+      },
+      "realTime": {
+        "title": "Comunicación en Tiempo Real",
+        "description": "Conéctate instantáneamente con expertos a través de nuestro sistema seguro de videollamadas y mensajería."
+      },
+      "scheduling": {
+        "title": "Programación Flexible",
+        "description": "Reserva sesiones a tu conveniencia con nuestro sistema de programación fácil de usar."
+      },
+      "payments": {
+        "title": "Pagos Seguros",
+        "description": "Todas las transacciones son seguras y están protegidas con nuestro sistema de pago confiable."
+      },
+      "guarantee": {
+        "title": "Garantía de Calidad",
+        "description": "Ofrecemos una garantía de satisfacción para todas las consultas en nuestra plataforma."
+      },
+      "resources": {
+        "title": "Recursos de Conocimiento",
+        "description": "Accede a nuestra extensa base de conocimientos y recursos compartidos por expertos."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar?",
+      "description": "Únete a miles de clientes y expertos satisfechos en nuestra plataforma",
+      "findExpert": "Encontrar un Experto",
+      "becomeExpert": "Convertirse en Experto"
+    }
+  },
+  "experts": {
+    "title": "Encontrar Expertos",
+    "search": "Buscar expertos...",
+    "filters": {
+      "title": "Filtros",
+      "categories": "Categorías",
+      "price": "Rango de Precio",
+      "rating": "Calificación",
+      "availability": "Disponibilidad",
+      "apply": "Aplicar Filtros",
+      "reset": "Restablecer"
+    },
+    "sort": {
+      "title": "Ordenar por",
+      "relevance": "Relevancia",
+      "rating": "Calificación",
+      "priceAsc": "Precio: De Menor a Mayor",
+      "priceDesc": "Precio: De Mayor a Menor"
+    },
+    "profile": {
+      "about": "Acerca de",
+      "services": "Servicios",
+      "reviews": "Reseñas",
+      "availability": "Disponibilidad",
+      "bookNow": "Reservar Ahora",
+      "contactExpert": "Contactar Experto",
+      "hourlyRate": "Tarifa por Hora",
+      "totalSessions": "Total de Sesiones",
+      "memberSince": "Miembro Desde",
+      "languages": "Idiomas",
+      "expertise": "Áreas de Especialización"
+    }
+  },
+  "booking": {
+    "title": "Reservar una Sesión",
+    "selectDate": "Seleccionar Fecha",
+    "selectTime": "Seleccionar Hora",
+    "duration": "Duración",
+    "sessionType": "Tipo de Sesión",
+    "paymentMethod": "Método de Pago",
+    "summary": "Resumen de Reserva",
+    "expert": "Experto",
+    "date": "Fecha",
+    "time": "Hora",
+    "total": "Total",
+    "proceedToPayment": "Proceder al Pago",
+    "bookingConfirmed": "Reserva Confirmada",
+    "confirmationMessage": "Tu reserva ha sido confirmada. Recibirás un correo electrónico de confirmación en breve.",
+    "viewBooking": "Ver Reserva",
+    "returnToDashboard": "Volver al Panel"
+  },
+  "dashboard": {
+    "client": {
+      "overview": "Resumen",
+      "upcomingSessions": "Próximas Sesiones",
+      "pastSessions": "Sesiones Pasadas",
+      "favoriteExperts": "Expertos Favoritos",
+      "recentTransactions": "Transacciones Recientes",
+      "analytics": "Analíticas",
+      "settings": "Configuración"
+    },
+    "expert": {
+      "overview": "Resumen",
+      "appointments": "Citas",
+      "earnings": "Ganancias",
+      "clients": "Clientes",
+      "reviews": "Reseñas",
+      "services": "Servicios",
+      "analytics": "Analíticas",
+      "settings": "Configuración"
+    }
+  },
+  "messages": {
+    "conversations": "Conversaciones",
+    "search": "Buscar conversaciones...",
+    "newMessage": "Nuevo Mensaje",
+    "noMessages": "Aún no hay mensajes",
+    "startConversation": "Iniciar una conversación",
+    "typeMessage": "Escribe un mensaje...",
+    "send": "Enviar",
+    "attachFile": "Adjuntar Archivo",
+    "templates": "Plantillas",
+    "saveTemplate": "Guardar como Plantilla",
+    "templateName": "Nombre de la Plantilla",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión en tu cuenta",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "loginButton": "Iniciar Sesión",
+      "orContinueWith": "O continuar con",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate"
+    },
+    "register": {
+      "title": "Crear una cuenta",
+      "name": "Nombre Completo",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "accountType": "Tipo de Cuenta",
+      "client": "Cliente",
+      "expert": "Experto",
+      "registerButton": "Registrarse",
+      "orContinueWith": "O continuar con",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "login": "Iniciar Sesión"
+    }
+  },
+  "footer": {
+    "platform": "Plataforma",
+    "findExperts": "Encontrar Expertos",
+    "pricing": "Precios",
+    "knowledgeBase": "Base de Conocimientos",
+    "blog": "Blog",
+    "company": "Empresa",
+    "aboutUs": "Sobre Nosotros",
+    "careers": "Carreras",
+    "contact": "Contacto",
+    "partners": "Socios",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "accessibility": "Accesibilidad",
+    "copyright": "© 2023 Cunslt. Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies"
+  }
+}
+

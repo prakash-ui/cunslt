@@ -1,0 +1,220 @@
+{
+  "common": {
+    "home": "Home",
+    "findExperts": "Find Experts",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "messages": "Messages",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "badge": "Expert Consultations Made Easy",
+      "title": "Connect with Top Experts in Minutes",
+      "description": "Get personalized advice from verified professionals in various fields. Book sessions, chat in real-time, and solve your challenges.",
+      "findExpert": "Find an Expert",
+      "becomeExpert": "Become an Expert",
+      "verifiedExperts": "Verified Experts",
+      "securePayments": "Secure Payments",
+      "moneyBack": "Money-back Guarantee"
+    },
+    "featuredExperts": {
+      "badge": "Featured Experts",
+      "title": "Meet Our Top Consultants",
+      "description": "Discover highly-rated experts ready to help you with your specific needs",
+      "viewProfile": "View Profile",
+      "viewAll": "View All Experts"
+    },
+    "howItWorks": {
+      "badge": "Simple Process",
+      "title": "How Cunslt Works",
+      "description": "Get expert advice in three simple steps",
+      "step1": {
+        "title": "Find Your Expert",
+        "description": "Browse profiles, read reviews, and find the perfect expert for your needs."
+      },
+      "step2": {
+        "title": "Book a Session",
+        "description": "Choose a convenient time slot and book your consultation with secure payment."
+      },
+      "step3": {
+        "title": "Get Expert Advice",
+        "description": "Connect via video call or chat and receive personalized guidance and solutions."
+      }
+    },
+    "features": {
+      "badge": "Platform Features",
+      "title": "Why Choose Cunslt",
+      "description": "Our platform offers everything you need for successful consultations",
+      "verifiedExperts": {
+        "title": "Verified Experts",
+        "description": "All experts on our platform are thoroughly vetted and verified to ensure quality advice."
+      },
+      "realTime": {
+        "title": "Real-time Communication",
+        "description": "Connect instantly with experts through our secure video calls and messaging system."
+      },
+      "scheduling": {
+        "title": "Flexible Scheduling",
+        "description": "Book sessions at your convenience with our easy-to-use scheduling system."
+      },
+      "payments": {
+        "title": "Secure Payments",
+        "description": "All transactions are secure and protected with our trusted payment system."
+      },
+      "guarantee": {
+        "title": "Quality Guarantee",
+        "description": "We offer a satisfaction guarantee for all consultations on our platform."
+      },
+      "resources": {
+        "title": "Knowledge Resources",
+        "description": "Access our extensive knowledge base and resources shared by experts."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Join thousands of satisfied clients and experts on our platform",
+      "findExpert": "Find an Expert",
+      "becomeExpert": "Become an Expert"
+    }
+  },
+  "experts": {
+    "title": "Find Experts",
+    "search": "Search experts...",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "price": "Price Range",
+      "rating": "Rating",
+      "availability": "Availability",
+      "apply": "Apply Filters",
+      "reset": "Reset"
+    },
+    "sort": {
+      "title": "Sort by",
+      "relevance": "Relevance",
+      "rating": "Rating",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low"
+    },
+    "profile": {
+      "about": "About",
+      "services": "Services",
+      "reviews": "Reviews",
+      "availability": "Availability",
+      "bookNow": "Book Now",
+      "contactExpert": "Contact Expert",
+      "hourlyRate": "Hourly Rate",
+      "totalSessions": "Total Sessions",
+      "memberSince": "Member Since",
+      "languages": "Languages",
+      "expertise": "Areas of Expertise"
+    }
+  },
+  "booking": {
+    "title": "Book a Session",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "duration": "Duration",
+    "sessionType": "Session Type",
+    "paymentMethod": "Payment Method",
+    "summary": "Booking Summary",
+    "expert": "Expert",
+    "date": "Date",
+    "time": "Time",
+    "total": "Total",
+    "proceedToPayment": "Proceed to Payment",
+    "bookingConfirmed": "Booking Confirmed",
+    "confirmationMessage": "Your booking has been confirmed. You will receive a confirmation email shortly.",
+    "viewBooking": "View Booking",
+    "returnToDashboard": "Return to Dashboard"
+  },
+  "dashboard": {
+    "client": {
+      "overview": "Overview",
+      "upcomingSessions": "Upcoming Sessions",
+      "pastSessions": "Past Sessions",
+      "favoriteExperts": "Favorite Experts",
+      "recentTransactions": "Recent Transactions",
+      "analytics": "Analytics",
+      "settings": "Settings"
+    },
+    "expert": {
+      "overview": "Overview",
+      "appointments": "Appointments",
+      "earnings": "Earnings",
+      "clients": "Clients",
+      "reviews": "Reviews",
+      "services": "Services",
+      "analytics": "Analytics",
+      "settings": "Settings"
+    }
+  },
+  "messages": {
+    "conversations": "Conversations",
+    "search": "Search conversations...",
+    "newMessage": "New Message",
+    "noMessages": "No messages yet",
+    "startConversation": "Start a conversation",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "attachFile": "Attach File",
+    "templates": "Templates",
+    "saveTemplate": "Save as Template",
+    "templateName": "Template Name",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "auth": {
+    "login": {
+      "title": "Login to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Login",
+      "orContinueWith": "Or continue with",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up"
+    },
+    "register": {
+      "title": "Create an account",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "accountType": "Account Type",
+      "client": "Client",
+      "expert": "Expert",
+      "registerButton": "Register",
+      "orContinueWith": "Or continue with",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    }
+  },
+  "footer": {
+    "platform": "Platform",
+    "findExperts": "Find Experts",
+    "pricing": "Pricing",
+    "knowledgeBase": "Knowledge Base",
+    "blog": "Blog",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "partners": "Partners",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "accessibility": "Accessibility",
+    "copyright": "© 2023 Cunslt. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  }
+}
+

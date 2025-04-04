@@ -1,0 +1,104 @@
+{
+    "common": {
+      "appName": "Cunslt",
+      "tagline": "Expertenberatung auf Abruf",
+      "findExpert": "Experten finden",
+      "becomeExpert": "Experte werden",
+      "login": "Anmelden",
+      "signup": "Registrieren",
+      "logout": "Abmelden",
+      "search": "Suchen",
+      "categories": "Kategorien",
+      "profile": "Profil",
+      "dashboard": "Dashboard",
+      "bookings": "Buchungen",
+      "messages": "Nachrichten",
+      "settings": "Einstellungen",
+      "help": "Hilfe",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutz",
+      "cookies": "Cookies"
+    },
+    "home": {
+      "hero": {
+        "title": "Expertenberatung auf Abruf",
+        "subtitle": "Buchen Sie Video-Beratungen mit verifizierten Experten aus Wirtschaft, Finanzen und Technologie.",
+        "cta": "Experten finden"
+      },
+      "categories": {
+        "title": "Nach Kategorie durchsuchen",
+        "viewAll": "Alle Kategorien anzeigen"
+      },
+      "experts": {
+        "title": "Empfohlene Experten",
+        "viewMore": "Weitere Experten finden"
+      },
+      "howItWorks": {
+        "title": "So funktioniert's",
+        "step1": {
+          "title": "Experten finden",
+          "description": "Durchsuchen Sie unseren Marktplatz mit verifizierten Experten und finden Sie den passenden für Ihre Bedürfnisse."
+        },
+        "step2": {
+          "title": "Beratung buchen",
+          "description": "Wählen Sie einen passenden Termin und buchen Sie Ihre Video-Beratung sicher."
+        },
+        "step3": {
+          "title": "Expertenrat erhalten",
+          "description": "Schalten Sie sich per Video dazu und erhalten Sie personalisierte Ratschläge für Ihre Herausforderungen."
+        }
+      },
+      "faq": {
+        "title": "Häufige Fragen",
+        "viewAll": "Alle Fragen anzeigen"
+      }
+    },
+    "search": {
+      "title": "Experten finden",
+      "placeholder": "Nach Name, Titel oder Stichworten suchen...",
+      "filters": "Filter",
+      "priceRange": "Preisspanne",
+      "categories": "Kategorien",
+      "skills": "Fähigkeiten",
+      "rating": "Mindestbewertung",
+      "country": "Land",
+      "verified": "Verifizierte Experten",
+      "availability": "Verfügbarkeit",
+      "noResults": "Keine Experten gefunden",
+      "tryAdjusting": "Passen Sie Ihre Filter an, um mehr Ergebnisse zu erhalten",
+      "showing": "Angezeigt",
+      "of": "von",
+      "experts": "Experten"
+    },
+    "expert": {
+      "profile": {
+        "about": "Über",
+        "reviews": "Bewertungen",
+        "availability": "Verfügbarkeit",
+        "hourlyRate": "/Stunde",
+        "verified": "Verifiziert",
+        "book": "Beratung buchen",
+        "contact": "Kontakt",
+        "aboutMe": "Über mich",
+        "skills": "Fähigkeiten & Expertise",
+        "experience": "Erfahrung",
+        "education": "Bildung",
+        "noReviews": "Noch keine Bewertungen.",
+        "noAvailability": "Keine Verfügbarkeit festgelegt."
+      }
+    },
+    "booking": {
+      "title": "Beratung buchen",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "duration": "Dauer",
+      "problem": "Beschreiben Sie Ihr Problem",
+      "problemPlaceholder": "Beschreiben Sie, was Sie in der Beratung besprechen möchten",
+      "total": "Gesamt",
+      "book": "Beratung buchen",
+      "noAvailableTimes": "Keine verfügbaren Termine für dieses Datum und diese Dauer",
+      "loadingTimes": "Verfügbare Termine werden geladen..."
+    }
+  }

@@ -1,0 +1,105 @@
+{
+  "common": {
+    "appName": "Cunslt",
+    "tagline": "Expert Consultations On Demand",
+    "findExpert": "Find an Expert",
+    "becomeExpert": "Become an Expert",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "search": "Search",
+    "categories": "Categories",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "bookings": "Bookings",
+    "messages": "Messages",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies"
+  },
+  "home": {
+    "hero": {
+      "title": "Expert Consultations On Demand",
+      "subtitle": "Book video consultations with verified experts in business, finance, and technology.",
+      "cta": "Find an Expert"
+    },
+    "categories": {
+      "title": "Browse by Category",
+      "viewAll": "View All Categories"
+    },
+    "experts": {
+      "title": "Featured Experts",
+      "viewMore": "Find More Experts"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Find an Expert",
+        "description": "Browse our marketplace of verified experts and find the perfect match for your needs."
+      },
+      "step2": {
+        "title": "Book a Consultation",
+        "description": "Select a convenient time slot and book your video consultation securely."
+      },
+      "step3": {
+        "title": "Get Expert Advice",
+        "description": "Connect via video and receive personalized advice to solve your challenges."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "viewAll": "View All FAQs"
+    }
+  },
+  "search": {
+    "title": "Find an Expert",
+    "placeholder": "Search by name, title, or keywords...",
+    "filters": "Filters",
+    "priceRange": "Price Range",
+    "categories": "Categories",
+    "skills": "Skills",
+    "rating": "Minimum Rating",
+    "country": "Country",
+    "verified": "Verified Experts",
+    "availability": "Availability",
+    "noResults": "No experts found",
+    "tryAdjusting": "Try adjusting your search filters to find more results",
+    "showing": "Showing",
+    "of": "of",
+    "experts": "experts"
+  },
+  "expert": {
+    "profile": {
+      "about": "About",
+      "reviews": "Reviews",
+      "availability": "Availability",
+      "hourlyRate": "/hour",
+      "verified": "Verified",
+      "book": "Book Consultation",
+      "contact": "Contact",
+      "aboutMe": "About Me",
+      "skills": "Skills & Expertise",
+      "experience": "Experience",
+      "education": "Education",
+      "noReviews": "No reviews yet.",
+      "noAvailability": "No availability set."
+    }
+  },
+  "booking": {
+    "title": "Book a Consultation",
+    "date": "Date",
+    "time": "Time",
+    "duration": "Duration",
+    "problem": "Describe Your Problem",
+    "problemPlaceholder": "Please describe what you'd like to discuss in the consultation",
+    "total": "Total",
+    "book": "Book Consultation",
+    "noAvailableTimes": "No available times for this date and duration",
+    "loadingTimes": "Loading available times..."
+  }
+}
+

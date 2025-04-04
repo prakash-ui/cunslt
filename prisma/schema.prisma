@@ -1,0 +1,361 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum UserRole {
+  USER
+  EXPERT
+  ADMIN
+}
+
+model User {
+  id                    String                 @id @default(cuid())
+  name                  String?
+  email                 String?                @unique
+  emailVerified         DateTime?
+  image                 String?
+  password              String?
+  role                  UserRole               @default(USER)
+  accounts              Account[]
+  sessions              Session[]
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  expertProfile         ExpertProfile?
+  consultationsAsClient Consultation[]         @relation("ClientConsultations")
+  consultationsAsExpert Consultation[]         @relation("ExpertConsultations")
+  messages              Message[]
+  notifications         Notification[]
+  reviewsGiven          Review[]               @relation("ReviewsGiven")
+  reviewsReceived       Review[]               @relation("ReviewsReceived")
+  reviewResponses       ReviewResponse[]
+  reviewReports         ReviewReport[]
+  wallet                Wallet?
+  withdrawalRequests    WithdrawalRequest[]
+  verificationRequests  VerificationRequest[]
+}
+
+model ExpertProfile {
+  id                String              @id @default(cuid())
+  userId            String              @unique
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title             String
+  description       String              @db.Text
+  shortDescription  String?             @db.Text
+  hourlyRate        Float
+  categories        Category[]
+  skills            Skill[]
+  education         Education[]
+  experience        Experience[]
+  languages         Language[]
+  availability      Availability[]
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  isVerified        Boolean             @default(false)
+  averageRating     Float?
+  totalReviews      Int                 @default(0)
+  featuredReviewId  String?
+  featuredReview    Review?             @relation("FeaturedReview", fields: [featuredReviewId], references: [id])
+  isAvailableForHire Boolean            @default(true)
+}
+
+model Category {
+  id             String           @id @default(cuid())
+  name           String           @unique
+  expertProfiles ExpertProfile[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model Skill {
+  id             String           @id @default(cuid())
+  name           String           @unique
+  expertProfiles ExpertProfile[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model Education {
+  id             String         @id @default(cuid())
+  expertProfileId String
+  expertProfile   ExpertProfile @relation(fields: [expertProfileId], references: [id], onDelete: Cascade)
+  institution    String
+  degree         String
+  fieldOfStudy   String
+  from           DateTime
+  to             DateTime?
+  description    String?        @db.Text
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+model Experience {
+  id             String         @id @default(cuid())
+  expertProfileId String
+  expertProfile   ExpertProfile @relation(fields: [expertProfileId], references: [id], onDelete: Cascade)
+  company        String
+  position       String
+  from           DateTime
+  to             DateTime?
+  description    String?        @db.Text
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+model Language {
+  id             String           @id @default(cuid())
+  name           String
+  proficiency    String
+  expertProfileId String
+  expertProfile   ExpertProfile   @relation(fields: [expertProfileId], references: [id], onDelete: Cascade)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model Availability {
+  id             String         @id @default(cuid())
+  expertProfileId String
+  expertProfile   ExpertProfile @relation(fields: [expertProfileId], references: [id], onDelete: Cascade)
+  day            Int
+  startTime      String
+  endTime        String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+enum ConsultationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  COMPLETED
+  CANCELLED
+}
+
+model Consultation {
+  id              String             @id @default(cuid())
+  clientId        String
+  client          User               @relation("ClientConsultations", fields: [clientId], references: [id])
+  expertId        String
+  expert          User               @relation("ExpertConsultations", fields: [expertId], references: [id])
+  title           String
+  description     String             @db.Text
+  status          ConsultationStatus @default(PENDING)
+  date            DateTime
+  duration        Int
+  price           Float
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  messages        Message[]
+  files           ConsultationFile[]
+  review          Review?
+  videoRoom       VideoRoom?
+  isPaid          Boolean            @default(false)
+  paymentIntentId String?
+}
+
+model ConsultationFile {
+  id             String       @id @default(cuid())
+  consultationId String
+  consultation   Consultation @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+  name           String
+  url            String
+  type           String
+  size           Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  consultationId String
+  consultation   Consultation @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+  senderId       String
+  sender         User         @relation(fields: [senderId], references: [id])
+  content        String       @db.Text
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  isRead         Boolean      @default(false)
+}
+
+enum NotificationType {
+  CONSULTATION_REQUEST
+  CONSULTATION_ACCEPTED
+  CONSULTATION_REJECTED
+  CONSULTATION_COMPLETED
+  CONSULTATION_CANCELLED
+  NEW_MESSAGE
+  NEW_REVIEW
+  PAYMENT_RECEIVED
+  WITHDRAWAL_PROCESSED
+  VERIFICATION_APPROVED
+  VERIFICATION_REJECTED
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      NotificationType
+  message   String
+  isRead    Boolean          @default(false)
+  link      String?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+}
+
+model Review {
+  id                String          @id @default(cuid())
+  consultationId    String?         @unique
+  consultation      Consultation?   @relation(fields: [consultationId], references: [id])
+  reviewerId        String
+  reviewer          User            @relation("ReviewsGiven", fields: [reviewerId], references: [id])
+  expertId          String
+  expert            User            @relation("ReviewsReceived", fields: [expertId], references: [id])
+  rating            Float
+  comment           String          @db.Text
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  response          ReviewResponse?
+  reports           ReviewReport[]
+  featuredInProfile ExpertProfile[] @relation("FeaturedReview")
+  isVerified        Boolean         @default(true)
+}
+
+model ReviewResponse {
+  id        String   @id @default(cuid())
+  reviewId  String   @unique
+  review    Review   @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  expertId  String
+  expert    User     @relation(fields: [expertId], references: [id])
+  response  String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ReportStatus {
+  PENDING
+  RESOLVED
+  REJECTED
+}
+
+model ReviewReport {
+  id        String       @id @default(cuid())
+  reviewId  String
+  review    Review       @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  reason    String       @db.Text
+  status    ReportStatus @default(PENDING)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model Wallet {
+  id                 String              @id @default(cuid())
+  userId             String              @unique
+  user               User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  balance            Float               @default(0)
+  totalEarnings      Float               @default(0)
+  availableForWithdrawal Float           @default(0)
+  pendingClearance   Float               @default(0)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  withdrawalRequests WithdrawalRequest[]
+}
+
+enum WithdrawalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  PROCESSED
+}
+
+model WithdrawalRequest {
+  id            String           @id @default(cuid())
+  walletId      String
+  wallet        Wallet           @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User             @relation(fields: [userId], references: [id])
+  amount        Float
+  status        WithdrawalStatus @default(PENDING)
+  paymentMethod String
+  paymentDetails Json
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  processedAt   DateTime?
+}
+
+model VideoRoom {
+  id             String       @id @default(cuid())
+  consultationId String       @unique
+  consultation   Consultation @relation(fields: [consultationId], references: [id], onDelete: Cascade)
+  roomName       String       @unique
+  roomUrl        String
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  expiresAt      DateTime
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model VerificationRequest {
+  id             String             @id @default(cuid())
+  userId         String
+  user           User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status         VerificationStatus @default(PENDING)
+  documentType   String
+  documentUrl    String
+  additionalInfo String?            @db.Text
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  reviewedAt     DateTime?
+  reviewNotes    String?            @db.Text
+}
+

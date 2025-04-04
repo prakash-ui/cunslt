@@ -1,0 +1,104 @@
+{
+    "common": {
+      "appName": "Cunslt",
+      "tagline": "Consultations d'experts à la demande",
+      "findExpert": "Trouver un expert",
+      "becomeExpert": "Devenir expert",
+      "login": "Connexion",
+      "signup": "Inscription",
+      "logout": "Déconnexion",
+      "search": "Rechercher",
+      "categories": "Catégories",
+      "profile": "Profil",
+      "dashboard": "Tableau de bord",
+      "bookings": "Réservations",
+      "messages": "Messages",
+      "settings": "Paramètres",
+      "help": "Aide",
+      "about": "À propos",
+      "contact": "Contact",
+      "terms": "Conditions",
+      "privacy": "Confidentialité",
+      "cookies": "Cookies"
+    },
+    "home": {
+      "hero": {
+        "title": "Consultations d'experts à la demande",
+        "subtitle": "Réservez des consultations vidéo avec des experts vérifiés en entreprise, finance et technologie.",
+        "cta": "Trouver un expert"
+      },
+      "categories": {
+        "title": "Parcourir par catégorie",
+        "viewAll": "Voir toutes les catégories"
+      },
+      "experts": {
+        "title": "Experts recommandés",
+        "viewMore": "Voir plus d'experts"
+      },
+      "howItWorks": {
+        "title": "Comment ça marche",
+        "step1": {
+          "title": "Trouver un expert",
+          "description": "Parcourez notre marché d'experts vérifiés et trouvez celui qui correspond à vos besoins."
+        },
+        "step2": {
+          "title": "Réserver une consultation",
+          "description": "Choisissez un créneau horaire et réservez votre consultation vidéo en toute sécurité."
+        },
+        "step3": {
+          "title": "Obtenir des conseils",
+          "description": "Connectez-vous par vidéo et recevez des conseils personnalisés pour résoudre vos problèmes."
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "viewAll": "Voir toutes les questions"
+      }
+    },
+    "search": {
+      "title": "Trouver un expert",
+      "placeholder": "Rechercher par nom, titre ou mots-clés...",
+      "filters": "Filtres",
+      "priceRange": "Tranche de prix",
+      "categories": "Catégories",
+      "skills": "Compétences",
+      "rating": "Note minimale",
+      "country": "Pays",
+      "verified": "Experts vérifiés",
+      "availability": "Disponibilité",
+      "noResults": "Aucun expert trouvé",
+      "tryAdjusting": "Ajustez vos filtres pour trouver plus de résultats",
+      "showing": "Affichage",
+      "of": "de",
+      "experts": "experts"
+    },
+    "expert": {
+      "profile": {
+        "about": "À propos",
+        "reviews": "Avis",
+        "availability": "Disponibilité",
+        "hourlyRate": "/heure",
+        "verified": "Vérifié",
+        "book": "Réserver une consultation",
+        "contact": "Contact",
+        "aboutMe": "À propos de moi",
+        "skills": "Compétences et expertise",
+        "experience": "Expérience",
+        "education": "Éducation",
+        "noReviews": "Aucun avis pour l'instant.",
+        "noAvailability": "Aucune disponibilité définie."
+      }
+    },
+    "booking": {
+      "title": "Réserver une consultation",
+      "date": "Date",
+      "time": "Heure",
+      "duration": "Durée",
+      "problem": "Décrivez votre problème",
+      "problemPlaceholder": "Décrivez ce que vous souhaitez discuter lors de la consultation",
+      "total": "Total",
+      "book": "Réserver la consultation",
+      "noAvailableTimes": "Aucun créneau disponible pour cette date et durée",
+      "loadingTimes": "Chargement des créneaux disponibles..."
+    }
+  }
