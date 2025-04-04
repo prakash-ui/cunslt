@@ -1,4 +1,4 @@
-import { getExpertReviews, getExpertReviewStats } from "@/app/actions/reviews"
+// import { getExpertReviews, getExpertReviewStats } from "@/app/actions/reviews"
 import { ReviewStatsComponent } from "@/components/reviews/review-stats"
 import { ReviewList } from "@/components/reviews/review-list"
 import { getCurrentUser } from "@/app/actions/auth"
@@ -9,15 +9,15 @@ interface ExpertReviewsSectionProps {
 }
 
 export async function ExpertReviewsSection({ expertId }: ExpertReviewsSectionProps) {
-  const statsResult = await getExpertReviewStats(expertId)
-  const reviewsResult = await getExpertReviews(expertId, 1, 5)
+  // const statsResult = await getExpertReviewStats(expertId)
+  // const reviewsResult = await getExpertReviews(expertId, 1, 5)
   const currentUser = await getCurrentUser()
 
-  const stats = "stats" in statsResult ? statsResult.stats : null
-  const reviews = "reviews" in reviewsResult ? reviewsResult.reviews : []
-  const pagination = "pagination" in reviewsResult ? reviewsResult.pagination : null
+  // const stats = "stats" in statsResult ? statsResult.stats : null
+  // const reviews = "reviews" in reviewsResult ? reviewsResult.reviews : []
+  // const pagination = "pagination" in reviewsResult ? reviewsResult.pagination : null
 
-  const hasReviews = reviews && reviews.length > 0
+  // const hasReviews = reviews && reviews.length > 0
 
   return (
     <div className="space-y-8">
@@ -28,7 +28,7 @@ export async function ExpertReviewsSection({ expertId }: ExpertReviewsSectionPro
         <CardContent>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-1">
-              <ReviewStatsComponent expertId={expertId} initialStats={stats} />
+              {/* <ReviewStatsComponent expertId={expertId} initialStats={stats} /> */}
             </div>
             <div className="md:col-span-2">
               {hasReviews ? (
