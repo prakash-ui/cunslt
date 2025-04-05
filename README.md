@@ -1,1 +1,2 @@
-![alt text]([(https://github.com/prakash-ui/cunslt/blob/main/Screenshot%202025-04-05%20152933.png)])
+![Screenshot](https://raw.githubusercontent.com/prakash-ui/cunslt/main/Screenshot%202025-04-05%20152933.png)
+
